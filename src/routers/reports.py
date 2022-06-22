@@ -10,6 +10,6 @@ router = APIRouter(
     responses={404: {"description": "Not found"}},
 )
 
-@router.get("", tags=["reports"])
+@router.post("", tags=["reports"])
 async def report_comment(commentId: int, isDiscussionComment: Optional[bool] = False, user:User = Depends(get_current_user), db: Session = Depends(get_db)): 
     return report_db_comment(commentId, isDiscussionComment, user, db)
