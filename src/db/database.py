@@ -7,7 +7,7 @@ DEV_SQLALCHEMY_DATABASE_URL = "postgresql://robtwxhuwoquuq:7a4f9ac896eb0efe21381
 SQLALCHEMY_DATABASE_URL = "postgresql://ppqjemqmbcfweh:b93424410e16e426d20b0f8e407b71323f3710ae148b1d85ab49f464f0f73905@ec2-44-195-169-163.compute-1.amazonaws.com:5432/df2bisqg0k6hmf"
 
 engine = create_engine(
-    DEV_SQLALCHEMY_DATABASE_URL,
+    SQLALCHEMY_DATABASE_URL,
     pool_pre_ping=True,
     client_encoding="utf8"
 )
