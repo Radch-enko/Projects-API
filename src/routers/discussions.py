@@ -21,7 +21,7 @@ async def create_discussion(createDiscussion: CreateDiscussion, maker: User = De
     return create_db_discussion(createDiscussion, maker, db)
 
 @router.get("/{discussion_id}", tags=["discussions"], response_model=DetailDiscussion)
-async def get_discussion_by_id(discussion_id: str, user: User = Depends(get_current_user), db: Session = Depends(get_db)): 
+async def get_discussion_by_id(discussion_id: str, user: User = Depends(get_current_user_nullable), db: Session = Depends(get_db)): 
     return get_db_discussion_by_id(discussion_id, user, db)
 
 # Post comment
